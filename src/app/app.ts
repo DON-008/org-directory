@@ -6,10 +6,8 @@ import { TPipe } from './i18n/t.pipe';
   selector: 'app-root',
   imports: [RouterOutlet, TPipe],
   template: `
-    <h1 style="color: var(--color-brand)">{{ 'app.title' | t }}</h1>
+    <h1>{{ 'app.title' | t }}</h1>
     <router-outlet />
   `,
 })
-export class App {
-  
-}
+export class App {}

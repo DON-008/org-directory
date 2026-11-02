@@ -3,6 +3,12 @@
 Format: **Chose** / **Rejected** / **Why**.
 
 ## 1. Conflict 1: no pagination vs API limits
+- Math: 137 records / 25 per request = 6 requests, but only 5 are allowed per minute. A full load cannot finish in under ~60 s.
+- Chose: one scrolling list that fills in progressively. Page 1 renders immediately; the rest load sequentially in the background through a sliding-window limiter (5 per 60 s). Progress is shown ("Loaded 125 of 137"). A 429 is treated as a fallback: wait for Retry-After and retry.
+- Failures: each page gets one retry. A page that fails twice is recorded, loaded rows stay visible, and Retry fetches only the missing pages.
+- Rejected: pagination (ops asked for none); infinite scroll (breaks global sort and search); waiting for all pages before rendering (60 s blank screen).
+- Gave up: a complete dataset for up to ~60 s, and rows shift as late pages arrive.
+- Assumption: failed requests count against the rate limit, so retries are not free.
 ## 2. Conflict 2: colour-only status vs accessibility
 ## 3. Status normalisation
 - Chose: trim + lowercase, map to active / inactive / suspended; everything else is "unknown".
@@ -18,6 +24,7 @@ Format: **Chose** / **Rejected** / **Why**.
 - Invalid emails are shown as typed with an "invalid" marker, not as a mailto link.
 - Invalid dates show "—" and always sort last.
 ## 6. Search and sort on partial data
+- Search, filter and sort run client-side on the rows loaded so far. The UI says results are partial until loading completes.
 ## 7. Name uniqueness (client + server)
 ## 8. URL as state
 ## 9. Assumptions
