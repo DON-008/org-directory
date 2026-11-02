@@ -27,10 +27,17 @@ Format: **Chose** / **Rejected** / **Why**.
 - Chose: null means unknown, shown as "—". Negative or non-numeric counts are never shown as 0.
 - Invalid emails are shown as typed with an "invalid" marker, not as a mailto link.
 - Invalid dates show "—" and always sort last.
+- Sorting: names use Intl.Collator (case/accent-insensitive, natural numbers, works for Arabic). Rows with no value (no name, invalid date) always sort last, in both directions. Adding a sortable column is one line in COLUMNS.
 ## 6. Search and sort on partial data
 - Search, filter and sort run client-side on the rows loaded so far. The UI says results are partial until loading completes.
+- While loading is incomplete and a filter is active, the UI says results may be incomplete.
 ## 7. Name uniqueness (client + server)
 ## 8. URL as state
+## 8. URL as state
+- Chose: the URL holds search, status, sort key and direction (`?q=&status=&sort=&dir=`). The list reads it with toSignal(queryParamMap), and controls navigate. Defaults are left out of the URL. Invalid values fall back to defaults.
+- Typing is debounced (300 ms) and uses replaceUrl so history isn't flooded. Status and sort changes push history entries so Back undoes them.
+- Rejected: component-local state mirrored into the URL (two sources of truth that drift apart).
+- Search is name-only, ignores case, accents and repeated spaces. This is intentionally different from the uniqueness rule, where "Café" and "Cafe" stay different organisations.
 ## 9. Assumptions
 - "R3" is referenced but not defined; I assumed it means tests.
 - Failed requests count against the 5/min rate limit.

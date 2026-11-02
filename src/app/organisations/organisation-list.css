@@ -61,3 +61,27 @@ th {
   color: var(--color-text-muted);
   font-size: var(--font-size-1);
 }
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-1);
+}
+
+.field input,
+.field select {
+  min-width: var(--size-control-min);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: var(--color-bg);
+  color: inherit;
+  font: inherit;
+}

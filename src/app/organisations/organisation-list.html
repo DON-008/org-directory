@@ -1,7 +1,31 @@
+<div class="toolbar" role="search">
+  <div class="field">
+    <label for="org-search">{{ 'filters.searchLabel' | t }}</label>
+    <input
+      id="org-search"
+      type="search"
+      autocomplete="off"
+      [value]="searchText()"
+      [placeholder]="'filters.searchPlaceholder' | t"
+      (input)="onSearchInput($event)"
+    />
+  </div>
+  <div class="field">
+    <label for="org-status">{{ 'filters.statusLabel' | t }}</label>
+    <select id="org-status" (change)="onStatusChange($event)">
+      @for (option of statusFilters; track option) {
+        <option [value]="option" [selected]="option === params().status">
+          {{ (option === 'all' ? 'filters.statusAll' : 'status.' + option) | t }}
+        </option>
+      }
+    </select>
+  </div>
+</div>
 <p class="progress" role="status" aria-live="polite">
   @if (store.status() === 'loading') {
     {{ 'list.loading' | t }}
   } @else if (store.status() === 'ready') {
+
     @if (store.isComplete()) {
       {{ 'list.progressDone' | t: { total: store.total() ?? 0 } }}
     } @else if (store.rateLimited()) {
@@ -13,6 +37,12 @@
 </p>
 
 @if (store.status() === 'ready') {
+    <p class="progress" role="status" aria-live="polite">
+    {{ 'list.showing' | t: { shown: rows().length, loaded: store.loadedCount() } }}
+    @if (hasActiveFilters() && !store.isComplete()) {
+      {{ 'list.partialNote' | t }}
+    }
+  </p>
   <div class="table-wrap">
     <table>
       <caption class="visually-hidden">{{ 'list.caption' | t }}</caption>

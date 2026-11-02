@@ -1,6 +1,14 @@
 {
   "app": { "title": "Organisation Directory" },
   "list": {
+    "filters": {
+    "searchLabel": "Search by name",
+    "searchPlaceholder": "Search organisations…",
+    "statusLabel": "Status",
+    "statusAll": "All statuses"
+  },
+  "showing": "Showing {shown} of {loaded} organisations",
+  "partialNote": "Some organisations are still loading, so these results may be incomplete.",
     "caption": "Organisations",
     "columns": {
       "name": "Name",
