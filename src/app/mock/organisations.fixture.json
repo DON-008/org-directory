@@ -1,0 +1,1354 @@
+[
+  {
+    "id": 1,
+    "name": "Northwind Traders",
+    "status": "active",
+    "memberCount": 42,
+    "owner": {
+      "email": "ops@northwind.example"
+    },
+    "createdAt": "2024-03-11T09:12:00Z"
+  },
+  {
+    "id": 2,
+    "name": "",
+    "status": "ACTIVE",
+    "memberCount": "12",
+    "owner": {
+      "email": "a@b.example"
+    },
+    "createdAt": 1710150720000
+  },
+  {
+    "id": 3,
+    "name": null,
+    "status": "Active",
+    "memberCount": -1,
+    "createdAt": "2024-01-02T00:00:00Z"
+  },
+  {
+    "id": 42,
+    "name": "Globex Corporation",
+    "status": "suspended",
+    "memberCount": 7,
+    "owner": {
+      "email": "hq@globex.example"
+    },
+    "createdAt": "2023-11-30T14:45:10Z"
+  },
+  {
+    "id": 42,
+    "name": "Globex Corporation Ltd",
+    "status": "actve",
+    "memberCount": 7,
+    "owner": {
+      "email": "hq@globex.example"
+    },
+    "createdAt": "2023-11-30T14:45:10Z"
+  },
+  {
+    "id": 6,
+    "name": "شركة الأمل 🚀",
+    "status": "active",
+    "memberCount": 3,
+    "owner": {
+      "email": "info@amal.example"
+    },
+    "createdAt": "2025-06-01T08:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "The Very Long Organisation Name That Somebody Actually Typed Into The Field Because Nobody Validated It And It Keeps Going Well Past Any Reasonable Column Width And Still Has Not Stopped",
+    "status": "inactive",
+    "memberCount": 0,
+    "owner": {
+      "email": "long@example.com"
+    },
+    "createdAt": "2024-07-19T16:20:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Initech",
+    "status": null,
+    "memberCount": null,
+    "owner": {
+      "email": "not-an-email"
+    },
+    "createdAt": "not a date"
+  },
+  {
+    "id": 101,
+    "name": "Meridian Studio",
+    "status": "inactive",
+    "memberCount": 342,
+    "owner": {
+      "email": "contact@meridianstudio.example"
+    },
+    "createdAt": "2024-01-28T15:41:07Z"
+  },
+  {
+    "id": 102,
+    "name": "Kestrel Holdings",
+    "status": "active",
+    "memberCount": 230,
+    "owner": {
+      "email": "contact@kestrelholdings.example"
+    },
+    "createdAt": "2024-10-22T05:37:59Z"
+  },
+  {
+    "id": 103,
+    "name": "Kestrel Networks",
+    "status": "active",
+    "memberCount": 43,
+    "owner": {
+      "email": "contact@kestrelnetworks.example"
+    },
+    "createdAt": "2023-11-16T19:35:09Z"
+  },
+  {
+    "id": 104,
+    "name": "Harbor Analytics",
+    "status": "active",
+    "memberCount": 2,
+    "owner": {
+      "email": "contact@harboranalytics.example"
+    },
+    "createdAt": "2024-05-01T07:31:20Z"
+  },
+  {
+    "id": 105,
+    "name": "Pioneer Analytics",
+    "status": "active",
+    "memberCount": 448,
+    "owner": {
+      "email": "contact@pioneeranalytics.example"
+    },
+    "createdAt": "2022-01-19T18:11:29Z"
+  },
+  {
+    "id": 106,
+    "name": "Falcon Media",
+    "status": "inactive",
+    "memberCount": 187,
+    "owner": {
+      "email": "contact@falconmedia.example"
+    },
+    "createdAt": "2024-12-11T14:55:41Z"
+  },
+  {
+    "id": 107,
+    "name": "Blue Works",
+    "status": "inactive",
+    "memberCount": 370,
+    "owner": {
+      "email": "contact@blueworks.example"
+    },
+    "createdAt": "2023-04-21T05:51:52Z"
+  },
+  {
+    "id": 108,
+    "name": "Cedar Partners",
+    "status": "active",
+    "memberCount": 340,
+    "owner": {
+      "email": "contact@cedarpartners.example"
+    },
+    "createdAt": "2024-03-17T14:44:30Z"
+  },
+  {
+    "id": 109,
+    "name": "Granite Studio",
+    "status": "active",
+    "memberCount": 230,
+    "owner": {
+      "email": "contact@granitestudio.example"
+    },
+    "createdAt": "2023-11-03T02:59:03Z"
+  },
+  {
+    "id": 110,
+    "name": "Nimbus Holdings",
+    "status": "active",
+    "memberCount": 471,
+    "owner": {
+      "email": "contact@nimbusholdings.example"
+    },
+    "createdAt": "2022-06-19T08:32:11Z"
+  },
+  {
+    "id": 111,
+    "name": "Meridian Labs",
+    "status": "SUSPENDED",
+    "memberCount": 276,
+    "owner": {
+      "email": "contact@meridianlabs.example"
+    },
+    "createdAt": "2025-07-23T18:23:32Z"
+  },
+  {
+    "id": 112,
+    "name": "Orbit Media",
+    "status": "inactive",
+    "memberCount": 2,
+    "owner": {
+      "email": "contact@orbitmedia.example"
+    },
+    "createdAt": "2023-11-30T23:58:17Z"
+  },
+  {
+    "id": 113,
+    "name": "شركة النور 🌟 13",
+    "status": "active",
+    "memberCount": 108,
+    "owner": {
+      "email": "contact@irisholdings.example"
+    },
+    "createdAt": "2024-09-17T17:30:10Z"
+  },
+  {
+    "id": 114,
+    "name": "Lumen Holdings",
+    "status": "inactive",
+    "memberCount": 403,
+    "owner": {
+      "email": "contact@lumenholdings.example"
+    },
+    "createdAt": "2022-10-21T06:57:46Z"
+  },
+  {
+    "id": 115,
+    "name": "Delta Works",
+    "status": "active",
+    "memberCount": 297,
+    "owner": {
+      "email": "contact@deltaworks.example"
+    },
+    "createdAt": "2024-04-04T09:11:45Z"
+  },
+  {
+    "id": 116,
+    "name": "Orbit Partners",
+    "status": "active",
+    "memberCount": 482,
+    "owner": {
+      "email": "contact@orbitpartners.example"
+    },
+    "createdAt": "2022-08-29T05:19:42Z"
+  },
+  {
+    "id": 117,
+    "name": "",
+    "status": "inactive",
+    "memberCount": "359",
+    "owner": {
+      "email": "contact@orbitlabs.example"
+    },
+    "createdAt": 1679156361000
+  },
+  {
+    "id": 118,
+    "name": "Blue Networks",
+    "status": "active",
+    "memberCount": 351,
+    "owner": {
+      "email": "contact@bluenetworks.example"
+    },
+    "createdAt": "2024-02-24T03:27:05Z"
+  },
+  {
+    "id": 119,
+    "name": "Harbor Logistics",
+    "status": "active",
+    "memberCount": 221,
+    "owner": {
+      "email": "contact@harborlogistics.example"
+    },
+    "createdAt": 1746187001000
+  },
+  {
+    "id": 120,
+    "name": "Acme Labs",
+    "status": "suspended",
+    "memberCount": 376,
+    "owner": {
+      "email": "contact@acmelabs.example"
+    },
+    "createdAt": "2025-04-05T05:24:21Z"
+  },
+  {
+    "id": 121,
+    "name": "Juniper Works",
+    "status": "active",
+    "memberCount": 292,
+    "owner": {
+      "email": "contact@juniperworks.example"
+    },
+    "createdAt": "2022-01-25T20:02:33Z"
+  },
+  {
+    "id": 122,
+    "name": "Ember Networks",
+    "status": "SUSPENDED",
+    "memberCount": 290,
+    "owner": {
+      "email": "contact@embernetworks.example"
+    },
+    "createdAt": "2022-09-28T11:46:33Z"
+  },
+  {
+    "id": 123,
+    "name": null,
+    "status": "inactive",
+    "memberCount": -1,
+    "createdAt": "2023-07-25T22:57:37Z"
+  },
+  {
+    "id": 124,
+    "name": "Juniper Systems",
+    "status": "inactive",
+    "memberCount": 391,
+    "owner": {
+      "email": "contact@junipersystems.example"
+    },
+    "createdAt": "2024-04-27T04:22:26Z"
+  },
+  {
+    "id": 125,
+    "name": "Acme Logistics",
+    "status": "active",
+    "memberCount": 147,
+    "owner": {
+      "email": "contact@acmelogistics.example"
+    },
+    "createdAt": "2024-01-05T18:58:50Z"
+  },
+  {
+    "id": 126,
+    "name": "مجموعة الرياض 🏢 26",
+    "status": "active",
+    "memberCount": 134,
+    "owner": {
+      "email": "contact@juniperholdings.example"
+    },
+    "createdAt": "2022-06-10T15:36:33Z"
+  },
+  {
+    "id": 127,
+    "name": "Nimbus Systems",
+    "status": "active",
+    "memberCount": 378,
+    "owner": {
+      "email": "contact@nimbussystems.example"
+    },
+    "createdAt": "2022-12-12T16:40:29Z"
+  },
+  {
+    "id": 128,
+    "name": "Granite Supply",
+    "status": "active",
+    "memberCount": 209,
+    "owner": {
+      "email": "contact@granitesupply.example"
+    },
+    "createdAt": "2022-12-14T08:42:08Z"
+  },
+  {
+    "id": 129,
+    "name": "Nimbus Logistics",
+    "status": "activ",
+    "memberCount": 148,
+    "owner": {
+      "email": "contact@nimbuslogistics.example"
+    },
+    "createdAt": "2022-09-06T19:38:25Z"
+  },
+  {
+    "id": 130,
+    "name": "Granite Foods",
+    "status": "active",
+    "memberCount": 111,
+    "owner": {
+      "email": "contact@granitefoods.example"
+    },
+    "createdAt": "2024-03-10T01:39:09Z"
+  },
+  {
+    "id": 131,
+    "name": "Pioneer Holdings",
+    "status": null,
+    "memberCount": null,
+    "owner": {
+      "email": "not-an-email"
+    },
+    "createdAt": "not a date"
+  },
+  {
+    "id": 132,
+    "name": "Harbor Networks",
+    "status": "inactive",
+    "memberCount": 485,
+    "owner": {
+      "email": "contact@harbornetworks.example"
+    },
+    "createdAt": "2022-02-05T15:22:07Z"
+  },
+  {
+    "id": 133,
+    "name": "Cedar Media",
+    "status": "Inactive",
+    "memberCount": 325,
+    "owner": {
+      "email": "contact@cedarmedia.example"
+    },
+    "createdAt": "2023-09-07T19:20:42Z"
+  },
+  {
+    "id": 134,
+    "name": "",
+    "status": "active",
+    "memberCount": "471",
+    "owner": {
+      "email": "contact@orbitenergy.example"
+    },
+    "createdAt": 1765602939000
+  },
+  {
+    "id": 135,
+    "name": "Granite Analytics",
+    "status": "active",
+    "memberCount": 19,
+    "owner": {
+      "email": "contact@graniteanalytics.example"
+    },
+    "createdAt": "2022-06-03T01:44:33Z"
+  },
+  {
+    "id": 136,
+    "name": "Cedar Studio",
+    "status": "inactive",
+    "memberCount": 498,
+    "owner": {
+      "email": "contact@cedarstudio.example"
+    },
+    "createdAt": "2025-11-18T02:04:02Z"
+  },
+  {
+    "id": 137,
+    "name": "The Extremely Long Organisation Name Number 37 That Keeps Going And Going Because Nobody Set A Maximum Length On The Field And It Overflows Every Column",
+    "status": "inactive",
+    "memberCount": 327,
+    "owner": {
+      "email": "contact@acmepartners.example"
+    },
+    "createdAt": "2025-11-22T11:46:23Z"
+  },
+  {
+    "id": 138,
+    "name": "Ember Foods",
+    "status": "inactive",
+    "memberCount": 390,
+    "owner": {
+      "email": "contact@emberfoods.example"
+    },
+    "createdAt": 1695275179000
+  },
+  {
+    "id": 139,
+    "name": "شركة النور 🌟 39",
+    "status": "inactive",
+    "memberCount": 175,
+    "owner": {
+      "email": "contact@nimbuscapital.example"
+    },
+    "createdAt": "2024-04-01T11:29:10Z"
+  },
+  {
+    "id": 140,
+    "name": "Kestrel Media",
+    "status": "active",
+    "memberCount": 124,
+    "owner": {
+      "email": "contact@kestrelmedia.example"
+    },
+    "createdAt": "2022-04-21T07:36:30Z"
+  },
+  {
+    "id": 141,
+    "name": "Kestrel Logistics",
+    "status": "active",
+    "memberCount": 274,
+    "owner": {
+      "email": "contact@kestrellogistics.example"
+    },
+    "createdAt": "2025-07-04T19:55:17Z"
+  },
+  {
+    "id": 142,
+    "name": "Pioneer Capital",
+    "status": "active",
+    "memberCount": 112,
+    "owner": {
+      "email": "contact@pioneercapital.example"
+    },
+    "createdAt": "2023-12-03T16:44:49Z"
+  },
+  {
+    "id": 143,
+    "name": "Kestrel Supply",
+    "status": "inactive",
+    "memberCount": 253,
+    "owner": {
+      "email": "contact@kestrelsupply.example"
+    },
+    "createdAt": "2022-02-18T23:15:01Z"
+  },
+  {
+    "id": 144,
+    "name": "Orbit Supply",
+    "status": "Inactive",
+    "memberCount": 185,
+    "owner": {
+      "email": "contact@orbitsupply.example"
+    },
+    "createdAt": "2022-04-25T03:20:46Z"
+  },
+  {
+    "id": 145,
+    "name": "Ember Supply",
+    "status": "active",
+    "memberCount": 251,
+    "owner": {
+      "email": "contact@embersupply.example"
+    },
+    "createdAt": "2022-09-02T04:34:18Z"
+  },
+  {
+    "id": 146,
+    "name": null,
+    "status": "inactive",
+    "memberCount": -1,
+    "createdAt": "2022-08-06T21:24:40Z"
+  },
+  {
+    "id": 147,
+    "name": "Kestrel Capital",
+    "status": "suspended",
+    "memberCount": 431,
+    "owner": {
+      "email": "contact@kestrelcapital.example"
+    },
+    "createdAt": "2024-06-26T07:55:05Z"
+  },
+  {
+    "id": 148,
+    "name": "Kestrel Studio",
+    "status": "inactive",
+    "memberCount": 447,
+    "owner": {
+      "email": "contact@kestrelstudio.example"
+    },
+    "createdAt": "2023-02-13T11:06:52Z"
+  },
+  {
+    "id": 149,
+    "name": "Meridian Energy",
+    "status": "suspended",
+    "memberCount": 345,
+    "owner": {
+      "email": "contact@meridianenergy.example"
+    },
+    "createdAt": "2024-08-30T11:26:35Z"
+  },
+  {
+    "id": 150,
+    "name": "NORTHWIND TRADERS",
+    "status": "suspended",
+    "memberCount": 283,
+    "owner": {
+      "email": "contact@harborgroup.example"
+    },
+    "createdAt": "2023-08-06T10:36:42Z"
+  },
+  {
+    "id": 151,
+    "name": "",
+    "status": "active",
+    "memberCount": "277",
+    "owner": {
+      "email": "contact@meridianhealth.example"
+    },
+    "createdAt": 1719260633000
+  },
+  {
+    "id": 152,
+    "name": "شركة النور 🌟 52",
+    "status": "inactive",
+    "memberCount": 25,
+    "owner": {
+      "email": "contact@lumenpartners.example"
+    },
+    "createdAt": "2023-12-28T10:32:50Z"
+  },
+  {
+    "id": 153,
+    "name": "Cedar Capital",
+    "status": "suspended",
+    "memberCount": 282,
+    "owner": {
+      "email": "contact@cedarcapital.example"
+    },
+    "createdAt": "2022-08-24T20:05:35Z"
+  },
+  {
+    "id": 154,
+    "name": "Orbit Analytics",
+    "status": "active",
+    "memberCount": 275,
+    "owner": {
+      "email": "contact@orbitanalytics.example"
+    },
+    "createdAt": "2022-04-08T23:54:34Z"
+  },
+  {
+    "id": 155,
+    "name": "Lumen Logistics",
+    "status": "Active",
+    "memberCount": 228,
+    "owner": {
+      "email": "contact@lumenlogistics.example"
+    },
+    "createdAt": "2024-11-02T07:09:01Z"
+  },
+  {
+    "id": 156,
+    "name": "Nimbus Health",
+    "status": "active",
+    "memberCount": 67,
+    "owner": {
+      "email": "contact@nimbushealth.example"
+    },
+    "createdAt": "2023-02-05T21:35:42Z"
+  },
+  {
+    "id": 157,
+    "name": "Juniper Energy",
+    "status": "suspended",
+    "memberCount": 386,
+    "owner": {
+      "email": "contact@juniperenergy.example"
+    },
+    "createdAt": 1653034223000
+  },
+  {
+    "id": 158,
+    "name": "Iris Logistics",
+    "status": "inactiv",
+    "memberCount": 28,
+    "owner": {
+      "email": "contact@irislogistics.example"
+    },
+    "createdAt": "2025-10-29T01:33:15Z"
+  },
+  {
+    "id": 159,
+    "name": "Meridian Analytics",
+    "status": "suspended",
+    "memberCount": 372,
+    "owner": {
+      "email": "contact@meridiananalytics.example"
+    },
+    "createdAt": "2023-10-08T15:00:55Z"
+  },
+  {
+    "id": 160,
+    "name": "Falcon Group",
+    "status": "active",
+    "memberCount": 164,
+    "owner": {
+      "email": "contact@falcongroup.example"
+    },
+    "createdAt": "2023-06-19T21:23:18Z"
+  },
+  {
+    "id": 161,
+    "name": "Iris Media",
+    "status": "active",
+    "memberCount": 228,
+    "owner": {
+      "email": "contact@irismedia.example"
+    },
+    "createdAt": "2022-05-12T18:31:42Z"
+  },
+  {
+    "id": 162,
+    "name": "Delta Systems",
+    "status": null,
+    "memberCount": null,
+    "owner": {
+      "email": "not-an-email"
+    },
+    "createdAt": "not a date"
+  },
+  {
+    "id": 163,
+    "name": "Meridian Group",
+    "status": "active",
+    "memberCount": 320,
+    "owner": {
+      "email": "contact@meridiangroup.example"
+    },
+    "createdAt": "2024-09-17T02:37:04Z"
+  },
+  {
+    "id": 164,
+    "name": "Ember Systems",
+    "status": "active",
+    "memberCount": 173,
+    "owner": {
+      "email": "contact@embersystems.example"
+    },
+    "createdAt": "2022-02-26T09:51:04Z"
+  },
+  {
+    "id": 165,
+    "name": "مؤسسة الفجر 🚀 65",
+    "status": "inactive",
+    "memberCount": 283,
+    "owner": {
+      "email": "contact@lumenfoods.example"
+    },
+    "createdAt": "2024-05-19T23:14:44Z"
+  },
+  {
+    "id": 166,
+    "name": "Meridian Holdings",
+    "status": "Active",
+    "memberCount": 382,
+    "owner": {
+      "email": "contact@meridianholdings.example"
+    },
+    "createdAt": "2023-10-27T03:53:09Z"
+  },
+  {
+    "id": 167,
+    "name": "Ember Partners",
+    "status": "suspended",
+    "memberCount": 292,
+    "owner": {
+      "email": "contact@emberpartners.example"
+    },
+    "createdAt": "2023-04-18T05:30:43Z"
+  },
+  {
+    "id": 168,
+    "name": "",
+    "status": "suspended",
+    "memberCount": "141",
+    "owner": {
+      "email": "contact@orbitnetworks.example"
+    },
+    "createdAt": 1762704070000
+  },
+  {
+    "id": 169,
+    "name": null,
+    "status": "suspended",
+    "memberCount": -1,
+    "createdAt": "2024-09-23T03:46:29Z"
+  },
+  {
+    "id": 170,
+    "name": "Pioneer Studio",
+    "status": "suspended",
+    "memberCount": 169,
+    "owner": {
+      "email": "contact@pioneerstudio.example"
+    },
+    "createdAt": "2022-08-24T02:27:45Z"
+  },
+  {
+    "id": 171,
+    "name": "Blue Supply",
+    "status": "suspended",
+    "memberCount": 42,
+    "owner": {
+      "email": "contact@bluesupply.example"
+    },
+    "createdAt": "2022-05-08T21:46:20Z"
+  },
+  {
+    "id": 172,
+    "name": "Lumen Studio",
+    "status": "active",
+    "memberCount": 131,
+    "owner": {
+      "email": "contact@lumenstudio.example"
+    },
+    "createdAt": "2022-12-06T15:04:57Z"
+  },
+  {
+    "id": 173,
+    "name": "Pioneer Supply",
+    "status": "suspended",
+    "memberCount": 229,
+    "owner": {
+      "email": "contact@pioneersupply.example"
+    },
+    "createdAt": "2025-06-05T01:23:45Z"
+  },
+  {
+    "id": 174,
+    "name": "The Extremely Long Organisation Name Number 74 That Keeps Going And Going Because Nobody Set A Maximum Length On The Field And It Overflows Every Column",
+    "status": "inactive",
+    "memberCount": 498,
+    "owner": {
+      "email": "contact@nimbusenergy.example"
+    },
+    "createdAt": "2022-08-25T06:49:55Z"
+  },
+  {
+    "id": 175,
+    "name": "Cedar Foods",
+    "status": "suspended",
+    "memberCount": 127,
+    "owner": {
+      "email": "contact@cedarfoods.example"
+    },
+    "createdAt": "2022-08-30T22:56:00Z"
+  },
+  {
+    "id": 176,
+    "name": "Iris Supply",
+    "status": "active",
+    "memberCount": 469,
+    "owner": {
+      "email": "contact@irissupply.example"
+    },
+    "createdAt": 1669580742000
+  },
+  {
+    "id": 177,
+    "name": "Cedar Systems",
+    "status": "SUSPENDED",
+    "memberCount": 95,
+    "owner": {
+      "email": "contact@cedarsystems.example"
+    },
+    "createdAt": "2022-02-22T19:53:59Z"
+  },
+  {
+    "id": 178,
+    "name": "شركة النور 🌟 78",
+    "status": "inactive",
+    "memberCount": 467,
+    "owner": {
+      "email": "contact@pioneersystems.example"
+    },
+    "createdAt": "2025-05-12T02:45:42Z"
+  },
+  {
+    "id": 179,
+    "name": "Iris Group",
+    "status": "active",
+    "memberCount": 30,
+    "owner": {
+      "email": "contact@irisgroup.example"
+    },
+    "createdAt": "2024-09-14T22:53:51Z"
+  },
+  {
+    "id": 180,
+    "name": "Harbor Studio",
+    "status": "inactive",
+    "memberCount": 135,
+    "owner": {
+      "email": "contact@harborstudio.example"
+    },
+    "createdAt": "2023-09-30T01:32:45Z"
+  },
+  {
+    "id": 181,
+    "name": "Acme Systems",
+    "status": "suspended",
+    "memberCount": 170,
+    "owner": {
+      "email": "contact@acmesystems.example"
+    },
+    "createdAt": "2025-10-06T20:47:54Z"
+  },
+  {
+    "id": 182,
+    "name": "Lumen Networks",
+    "status": "active",
+    "memberCount": 369,
+    "owner": {
+      "email": "contact@lumennetworks.example"
+    },
+    "createdAt": "2025-09-29T19:31:11Z"
+  },
+  {
+    "id": 183,
+    "name": "Iris Health",
+    "status": "suspended",
+    "memberCount": 251,
+    "owner": {
+      "email": "contact@irishealth.example"
+    },
+    "createdAt": "2023-11-30T17:02:22Z"
+  },
+  {
+    "id": 184,
+    "name": "Ember Works",
+    "status": "suspended",
+    "memberCount": 314,
+    "owner": {
+      "email": "contact@emberworks.example"
+    },
+    "createdAt": "2022-08-05T20:42:52Z"
+  },
+  {
+    "id": 185,
+    "name": "",
+    "status": "inactive",
+    "memberCount": "272",
+    "owner": {
+      "email": "contact@falconanalytics.example"
+    },
+    "createdAt": 1672496337000
+  },
+  {
+    "id": 186,
+    "name": "Juniper Analytics",
+    "status": "inactive",
+    "memberCount": 9,
+    "owner": {
+      "email": "contact@juniperanalytics.example"
+    },
+    "createdAt": "2023-03-31T19:41:11Z"
+  },
+  {
+    "id": 187,
+    "name": "Orbit Works",
+    "status": "suspnded",
+    "memberCount": 428,
+    "owner": {
+      "email": "contact@orbitworks.example"
+    },
+    "createdAt": "2025-08-29T19:12:42Z"
+  },
+  {
+    "id": 188,
+    "name": "Iris Foods",
+    "status": "ACTIVE",
+    "memberCount": 130,
+    "owner": {
+      "email": "contact@irisfoods.example"
+    },
+    "createdAt": "2023-12-29T00:28:30Z"
+  },
+  {
+    "id": 189,
+    "name": "Blue Logistics",
+    "status": "inactive",
+    "memberCount": 248,
+    "owner": {
+      "email": "contact@bluelogistics.example"
+    },
+    "createdAt": "2022-10-06T06:27:35Z"
+  },
+  {
+    "id": 190,
+    "name": "globex corporation",
+    "status": "inactive",
+    "memberCount": 158,
+    "owner": {
+      "email": "contact@cedargroup.example"
+    },
+    "createdAt": "2024-10-23T15:38:31Z"
+  },
+  {
+    "id": 191,
+    "name": "مؤسسة الفجر 🚀 91",
+    "status": "inactive",
+    "memberCount": 299,
+    "owner": {
+      "email": "contact@orbitholdings.example"
+    },
+    "createdAt": "2024-08-17T02:26:52Z"
+  },
+  {
+    "id": 192,
+    "name": null,
+    "status": "inactive",
+    "memberCount": -1,
+    "createdAt": "2024-09-27T02:54:00Z"
+  },
+  {
+    "id": 193,
+    "name": "Lumen Supply",
+    "status": null,
+    "memberCount": null,
+    "owner": {
+      "email": "not-an-email"
+    },
+    "createdAt": "not a date"
+  },
+  {
+    "id": 194,
+    "name": "Acme Health",
+    "status": "active",
+    "memberCount": 466,
+    "owner": {
+      "email": "contact@acmehealth.example"
+    },
+    "createdAt": "2023-08-02T11:32:36Z"
+  },
+  {
+    "id": 195,
+    "name": "Cedar Labs",
+    "status": "active",
+    "memberCount": 69,
+    "owner": {
+      "email": "contact@cedarlabs.example"
+    },
+    "createdAt": 1707920594000
+  },
+  {
+    "id": 196,
+    "name": "Delta Health",
+    "status": "active",
+    "memberCount": 143,
+    "owner": {
+      "email": "contact@deltahealth.example"
+    },
+    "createdAt": "2025-06-05T19:16:50Z"
+  },
+  {
+    "id": 197,
+    "name": "Juniper Networks",
+    "status": "active",
+    "memberCount": 448,
+    "owner": {
+      "email": "contact@junipernetworks.example"
+    },
+    "createdAt": "2022-08-17T04:03:44Z"
+  },
+  {
+    "id": 198,
+    "name": "Granite Labs",
+    "status": "inactive",
+    "memberCount": 184,
+    "owner": {
+      "email": "contact@granitelabs.example"
+    },
+    "createdAt": "2022-10-25T18:55:06Z"
+  },
+  {
+    "id": 199,
+    "name": "Juniper Capital",
+    "status": "ACTIVE",
+    "memberCount": 356,
+    "owner": {
+      "email": "contact@junipercapital.example"
+    },
+    "createdAt": "2023-07-21T17:31:34Z"
+  },
+  {
+    "id": 200,
+    "name": "Meridian Media",
+    "status": "active",
+    "memberCount": 350,
+    "owner": {
+      "email": "contact@meridianmedia.example"
+    },
+    "createdAt": "2025-04-08T00:22:17Z"
+  },
+  {
+    "id": 201,
+    "name": "Blue Media",
+    "status": "active",
+    "memberCount": 406,
+    "owner": {
+      "email": "contact@bluemedia.example"
+    },
+    "createdAt": "2024-02-05T23:59:51Z"
+  },
+  {
+    "id": 202,
+    "name": "",
+    "status": "suspended",
+    "memberCount": "241",
+    "owner": {
+      "email": "contact@granitelogistics.example"
+    },
+    "createdAt": 1676589997000
+  },
+  {
+    "id": 203,
+    "name": "Iris Networks",
+    "status": "suspended",
+    "memberCount": 133,
+    "owner": {
+      "email": "contact@irisnetworks.example"
+    },
+    "createdAt": "2022-06-08T17:55:40Z"
+  },
+  {
+    "id": 204,
+    "name": "شركة النور 🌟 104",
+    "status": "suspended",
+    "memberCount": 253,
+    "owner": {
+      "email": "contact@deltalogistics.example"
+    },
+    "createdAt": "2025-02-02T07:33:28Z"
+  },
+  {
+    "id": 205,
+    "name": "Blue Energy",
+    "status": "active",
+    "memberCount": 198,
+    "owner": {
+      "email": "contact@blueenergy.example"
+    },
+    "createdAt": "2023-09-25T16:18:52Z"
+  },
+  {
+    "id": 206,
+    "name": "Blue Analytics",
+    "status": "suspended",
+    "memberCount": 27,
+    "owner": {
+      "email": "contact@blueanalytics.example"
+    },
+    "createdAt": "2025-11-20T09:25:30Z"
+  },
+  {
+    "id": 207,
+    "name": "Falcon Health",
+    "status": "active",
+    "memberCount": 112,
+    "owner": {
+      "email": "contact@falconhealth.example"
+    },
+    "createdAt": "2024-07-12T15:14:15Z"
+  },
+  {
+    "id": 208,
+    "name": "Orbit Group",
+    "status": "inactive",
+    "memberCount": 294,
+    "owner": {
+      "email": "contact@orbitgroup.example"
+    },
+    "createdAt": "2022-12-15T18:23:12Z"
+  },
+  {
+    "id": 209,
+    "name": "Granite Capital",
+    "status": "suspended",
+    "memberCount": 187,
+    "owner": {
+      "email": "contact@granitecapital.example"
+    },
+    "createdAt": "2022-07-26T00:57:29Z"
+  },
+  {
+    "id": 210,
+    "name": "Juniper Health",
+    "status": "Active",
+    "memberCount": 351,
+    "owner": {
+      "email": "contact@juniperhealth.example"
+    },
+    "createdAt": "2024-01-07T04:19:43Z"
+  },
+  {
+    "id": 211,
+    "name": "The Extremely Long Organisation Name Number 111 That Keeps Going And Going Because Nobody Set A Maximum Length On The Field And It Overflows Every Column",
+    "status": "active",
+    "memberCount": 102,
+    "owner": {
+      "email": "contact@deltastudio.example"
+    },
+    "createdAt": "2024-04-21T23:46:07Z"
+  },
+  {
+    "id": 212,
+    "name": "Iris Works",
+    "status": "inactive",
+    "memberCount": 341,
+    "owner": {
+      "email": "contact@irisworks.example"
+    },
+    "createdAt": "2025-11-20T13:40:47Z"
+  },
+  {
+    "id": 213,
+    "name": "Ember Health",
+    "status": "inactive",
+    "memberCount": 161,
+    "owner": {
+      "email": "contact@emberhealth.example"
+    },
+    "createdAt": "2025-09-08T11:34:29Z"
+  },
+  {
+    "id": 214,
+    "name": "Falcon Labs",
+    "status": "suspended",
+    "memberCount": 417,
+    "owner": {
+      "email": "contact@falconlabs.example"
+    },
+    "createdAt": 1719395562000
+  },
+  {
+    "id": 215,
+    "name": null,
+    "status": "inactive",
+    "memberCount": -1,
+    "createdAt": "2025-03-30T04:51:03Z"
+  },
+  {
+    "id": 216,
+    "name": "Acme Capital",
+    "status": "actve",
+    "memberCount": 68,
+    "owner": {
+      "email": "contact@acmecapital.example"
+    },
+    "createdAt": "2025-09-14T09:56:27Z"
+  },
+  {
+    "id": 217,
+    "name": "مجموعة الرياض 🏢 117",
+    "status": "suspended",
+    "memberCount": 439,
+    "owner": {
+      "email": "contact@acmefoods.example"
+    },
+    "createdAt": "2024-09-13T00:14:29Z"
+  },
+  {
+    "id": 218,
+    "name": "Pioneer Health",
+    "status": "active",
+    "memberCount": 103,
+    "owner": {
+      "email": "contact@pioneerhealth.example"
+    },
+    "createdAt": "2023-04-14T07:56:20Z"
+  },
+  {
+    "id": 219,
+    "name": "",
+    "status": "suspended",
+    "memberCount": "412",
+    "owner": {
+      "email": "contact@kestrelhealth.example"
+    },
+    "createdAt": 1653299683000
+  },
+  {
+    "id": 220,
+    "name": "Iris Studio",
+    "status": "suspended",
+    "memberCount": 2,
+    "owner": {
+      "email": "contact@irisstudio.example"
+    },
+    "createdAt": "2023-10-20T00:43:55Z"
+  },
+  {
+    "id": 221,
+    "name": "Blue Group",
+    "status": "SUSPENDED",
+    "memberCount": 307,
+    "owner": {
+      "email": "contact@bluegroup.example"
+    },
+    "createdAt": "2022-09-07T20:53:54Z"
+  },
+  {
+    "id": 222,
+    "name": "Delta Analytics",
+    "status": "active",
+    "memberCount": 110,
+    "owner": {
+      "email": "contact@deltaanalytics.example"
+    },
+    "createdAt": "2022-07-18T06:52:35Z"
+  },
+  {
+    "id": 223,
+    "name": "Falcon Holdings",
+    "status": "suspended",
+    "memberCount": 103,
+    "owner": {
+      "email": "contact@falconholdings.example"
+    },
+    "createdAt": "2023-09-24T17:05:20Z"
+  },
+  {
+    "id": 224,
+    "name": "Harbor Media",
+    "status": null,
+    "memberCount": null,
+    "owner": {
+      "email": "not-an-email"
+    },
+    "createdAt": "not a date"
+  },
+  {
+    "id": 225,
+    "name": "Cedar Networks",
+    "status": "inactive",
+    "memberCount": 436,
+    "owner": {
+      "email": "contact@cedarnetworks.example"
+    },
+    "createdAt": "2024-03-24T16:08:29Z"
+  },
+  {
+    "id": 226,
+    "name": "Blue Partners",
+    "status": "active",
+    "memberCount": 80,
+    "owner": {
+      "email": "contact@bluepartners.example"
+    },
+    "createdAt": "2023-02-11T16:19:16Z"
+  },
+  {
+    "id": 227,
+    "name": "Pioneer Media",
+    "status": "inactive",
+    "memberCount": 39,
+    "owner": {
+      "email": "contact@pioneermedia.example"
+    },
+    "createdAt": "2025-05-23T09:48:04Z"
+  },
+  {
+    "id": 228,
+    "name": "Nimbus Supply",
+    "status": "suspended",
+    "memberCount": 12,
+    "owner": {
+      "email": "contact@nimbussupply.example"
+    },
+    "createdAt": "2025-02-12T12:57:11Z"
+  },
+  {
+    "id": 229,
+    "name": "Pioneer Foods",
+    "status": "suspended",
+    "memberCount": 197,
+    "owner": {
+      "email": "contact@pioneerfoods.example"
+    },
+    "createdAt": "2025-06-16T16:31:23Z"
+  }
+]

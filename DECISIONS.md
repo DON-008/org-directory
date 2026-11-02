@@ -15,3 +15,6 @@ Format: **Chose** / **Rejected** / **Why**.
 - Failed requests count against the 5/min rate limit.
 ## 10. AI tool declaration
 - (fill in honestly as you go)
+
+- Mock API: counts every non-429 list request (including 500s) against the 5/min budget; 429s are not counted. Counter is in memory (resets on reload).
+- Create is mocked with server-side uniqueness (409), and created records appear in later list responses.

@@ -10,4 +10,6 @@ import { TPipe } from './i18n/t.pipe';
     <router-outlet />
   `,
 })
-export class App {}
+export class App {
+  
+}
