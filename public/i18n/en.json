@@ -1,3 +1,37 @@
 {
-  "app": { "title": "Organisation Directory" }
+  "app": { "title": "Organisation Directory" },
+  "list": {
+    "caption": "Organisations",
+    "columns": {
+      "name": "Name",
+      "status": "Status",
+      "members": "Members",
+      "owner": "Owner",
+      "created": "Created",
+      "issues": "Data issues"
+    },
+    "unnamed": "Unnamed organisation",
+    "unknown": "Unknown",
+    "noOwner": "No owner",
+    "invalidEmail": "(invalid email)",
+    "loading": "Loading organisations…",
+    "progress": "Loaded {loaded} of {total} organisations",
+    "progressDone": "All {total} organisations loaded",
+    "waitingForLimit": "Waiting for the API rate limit before loading more…"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "suspended": "Suspended",
+    "unknown": "Unknown"
+  },
+  "issues": {
+    "missingName": "Missing name",
+    "unknownStatus": "Unknown status",
+    "invalidMemberCount": "Invalid member count",
+    "missingOwner": "Missing owner",
+    "invalidEmail": "Invalid owner email",
+    "invalidDate": "Invalid date",
+    "duplicateId": "Duplicate ID"
+  }
 }
