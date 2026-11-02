@@ -1,0 +1,63 @@
+.progress {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-1);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 56rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-border);
+  text-align: start;
+  vertical-align: top;
+}
+
+th {
+  background: var(--color-surface);
+  font-weight: var(--font-weight-strong);
+}
+
+.col-name { width: 30%; }
+.col-status { width: 12%; }
+.col-members { width: 10%; }
+.col-owner { width: 20%; }
+.col-created { width: 12%; }
+.col-issues { width: 16%; }
+
+.sort {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.owner {
+  overflow-wrap: anywhere;
+}
+
+.muted {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-1);
+}

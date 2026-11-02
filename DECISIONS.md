@@ -10,6 +10,10 @@ Format: **Chose** / **Rejected** / **Why**.
 - Gave up: a complete dataset for up to ~60 s, and rows shift as late pages arrive.
 - Assumption: failed requests count against the rate limit, so retries are not free.
 ## 2. Conflict 2: colour-only status vs accessibility
+- Chose: a small dot plus a visible text label. The dot is decorative (aria-hidden); the label carries the meaning. Unknown status is a hollow ring, so it also differs by shape.
+- Rejected: dot only, with the label in a tooltip or aria-label. Sighted colour-blind users get nothing from it, and tooltips are invisible on touch and keyboard (WCAG 1.4.1, use of colour).
+- Contrast: all dot colours are at least 3:1 against the background (WCAG 1.4.11).
+- Gave up: the cleaner, label-free table the designer wanted. The label is muted and small to keep the visual weight low.
 ## 3. Status normalisation
 - Chose: trim + lowercase, map to active / inactive / suspended; everything else is "unknown".
 - Rejected: fuzzy matching ("actve" → "active").
