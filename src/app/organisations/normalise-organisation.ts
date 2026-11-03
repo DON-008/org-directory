@@ -1,6 +1,6 @@
 import { DataIssue, ORG_STATUSES, OrgStatus, Organisation } from './organisation.model';
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ISO_DATE_START = /^\d{4}-\d{2}-\d{2}/;
 
 function asRecord(value: unknown): Record<string, unknown> {
@@ -91,3 +91,8 @@ export function flagDuplicateIds(list: Organisation[]): Organisation[] {
       : org,
   );
 }
+
+export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;{
+  
+}
+
