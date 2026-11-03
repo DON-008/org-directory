@@ -32,3 +32,10 @@ export interface OrganisationsPage {
   limit: number;
   offset: number;
 }
+
+export interface NewOrganisationInput {
+  name: string;
+  status: KnownStatus;
+  ownerEmail: string;
+  memberCount: number | null;
+}
