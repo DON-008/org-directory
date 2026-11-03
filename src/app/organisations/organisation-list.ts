@@ -17,7 +17,7 @@ const SEARCH_DEBOUNCE_MS = 300;
 
 @Component({
   selector: 'app-organisation-list',
-  imports: [DatePipe, DecimalPipe, TPipe, StatusIndicator, StatePanel],
+  imports: [DatePipe, DecimalPipe, TPipe, StatusIndicator, StatePanel ,RouterLink],
   templateUrl: './organisation-list.html',
   styleUrl: './organisation-list.css',
 })

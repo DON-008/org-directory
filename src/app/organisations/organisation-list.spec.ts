@@ -52,7 +52,7 @@ describe('OrganisationList states', () => {
   it('shows an alert with a working retry when page 1 fails', async () => {
     const { el, store, fixture, panel } = await render((s) => s.status.set('error'));
     expect(panel('error')?.getAttribute('role')).toBe('alert');
-    el.querySelector<HTMLButtonElement>('.action')!.click();
+    el.querySelector<HTMLButtonElement>('app-state-panel .action')!.click();
     await fixture.whenStable();
     expect(store.load).toHaveBeenCalledTimes(1);
   });
@@ -85,6 +85,6 @@ describe('OrganisationList states', () => {
     );
     expect(panel('noResults')).not.toBeNull();
     expect(panel('empty')).toBeNull();
-    expect(el.querySelector('.action')).not.toBeNull();
+    expect(el.querySelector('app-state-panel .action')).not.toBeNull();
   });
 });
