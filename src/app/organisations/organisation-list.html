@@ -1,21 +1,21 @@
 <div class="toolbar" role="search">
   <div class="field">
-    <label for="org-search">{{ 'filters.searchLabel' | t }}</label>
+    <label for="org-search">{{ 'Search' | t }}</label>
     <input
       id="org-search"
       type="search"
       autocomplete="off"
       [value]="searchText()"
-      [placeholder]="'filters.searchPlaceholder' | t"
+      [placeholder]="'Search organisation' | t"
       (input)="onSearchInput($event)"
     />
   </div>
   <div class="field">
-    <label for="org-status">{{ 'filters.statusLabel' | t }}</label>
+    <label for="org-status">{{ 'Status' | t }}</label>
     <select id="org-status" (change)="onStatusChange($event)">
       @for (option of statusFilters; track option) {
         <option [value]="option" [selected]="option === params().status">
-          {{ (option === 'all' ? 'filters.statusAll' : 'status.' + option) | t }}
+          {{ (option === 'all' ? 'All' : 'status.' + option) | t }}
         </option>
       }
     </select>

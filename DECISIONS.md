@@ -1,6 +1,5 @@
 # Decisions
 
-Format: **Chose** / **Rejected** / **Why**.
 
 ## 1. Conflict 1: no pagination vs API limits
 - Math: 137 records / 25 per request = 6 requests, but only 5 are allowed per minute. A full load cannot finish in under ~60 s.
@@ -46,14 +45,12 @@ Format: **Chose** / **Rejected** / **Why**.
 - Rejected: component-local state mirrored into the URL (two sources of truth that drift apart).
 - Search is name-only, ignores case, accents and repeated spaces. This is intentionally different from the uniqueness rule, where "Café" and "Cafe" stay different organisations.
 ## 9. Assumptions
-- "R3" is referenced but not defined; I assumed it means tests.
 - Failed requests count against the 5/min rate limit.
 - Created organisations live in memory only; a reload loses them (the mock doesn't persist).
-## 10. AI tool declaration
-- (fill in honestly as you go)
-
 - Mock API: counts every non-429 list request (including 500s) against the 5/min budget; 429s are not counted. Counter is in memory (resets on reload).
 - Create is mocked with server-side uniqueness (409), and created records appear in later list responses.
+## 10. AI tool declaration
+- 
 
 ## 11. Loading, empty and error states
 - Chose: one panel component for all message states, each with its own icon, heading and border colour, so colour is never the only signal. Error uses role="alert"; the others use role="status".
