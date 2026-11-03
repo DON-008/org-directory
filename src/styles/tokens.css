@@ -35,4 +35,13 @@
   --size-dot: 0.75rem;
   --font-weight-strong: 600;
   --size-control-min: 14rem;
+  
+    --color-warning: #92400e;
+  --color-on-brand: #ffffff;
+  --color-skeleton: #e5e7eb;
+  --color-skeleton-shine: #f3f4f6;
+  --size-skeleton-row: 2.5rem;
+  --size-icon: 1.75rem;
+  --border-width-accent: 0.25rem;
+
 }

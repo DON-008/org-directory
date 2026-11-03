@@ -46,3 +46,10 @@ Format: **Chose** / **Rejected** / **Why**.
 
 - Mock API: counts every non-429 list request (including 500s) against the 5/min budget; 429s are not counted. Counter is in memory (resets on reload).
 - Create is mocked with server-side uniqueness (409), and created records appear in later list responses.
+
+## 11. Loading, empty and error states
+- Chose: one panel component for all message states, each with its own icon, heading and border colour, so colour is never the only signal. Error uses role="alert"; the others use role="status".
+- Empty (the API has nothing) and no-results (filters match nothing) are separate states. Only no-results offers "Clear filters".
+- A total failure (page 1 failed twice) shows an error panel. A partial failure keeps the loaded rows and adds a warning with a retry for the missing pages only.
+- Loading uses a skeleton with aria-busy on the results area. The progress line sits outside that area because screen readers can suppress announcements inside a busy region.
+- Known limitation: after clicking Try again, focus is lost because the panel is replaced. With more time I would move focus to the progress line.

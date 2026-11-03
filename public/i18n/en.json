@@ -1,5 +1,17 @@
 {
   "app": { "title": "Organisation Directory" },
+  "states": {
+  "retry": "Try again",
+  "errorTitle": "Couldn't load organisations",
+  "errorMessage": "The server didn't respond correctly. Your search and filters are kept.",
+  "partialTitle": "Some organisations couldn't be loaded",
+  "partialMessage": "Showing {loaded} of {total}. The missing pages failed twice.",
+  "emptyTitle": "No organisations yet",
+  "emptyMessage": "There are no organisations to show.",
+  "noResultsTitle": "No organisations match",
+  "noResultsMessage": "Try a different search or status.",
+  "clearFilters": "Clear filters"
+},
   "list": {
     "filters": {
     "searchLabel": "Search by name",

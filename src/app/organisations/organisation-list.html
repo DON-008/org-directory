@@ -21,11 +21,11 @@
     </select>
   </div>
 </div>
+
 <p class="progress" role="status" aria-live="polite">
   @if (store.status() === 'loading') {
     {{ 'list.loading' | t }}
   } @else if (store.status() === 'ready') {
-
     @if (store.isComplete()) {
       {{ 'list.progressDone' | t: { total: store.total() ?? 0 } }}
     } @else if (store.rateLimited()) {
@@ -36,84 +36,140 @@
   }
 </p>
 
-@if (store.status() === 'ready') {
-    <p class="progress" role="status" aria-live="polite">
-    {{ 'list.showing' | t: { shown: rows().length, loaded: store.loadedCount() } }}
-    @if (hasActiveFilters() && !store.isComplete()) {
-      {{ 'list.partialNote' | t }}
-    }
-  </p>
-  <div class="table-wrap">
-    <table>
-      <caption class="visually-hidden">{{ 'list.caption' | t }}</caption>
-      <colgroup>
-        <col class="col-name" />
-        <col class="col-status" />
-        <col class="col-members" />
-        <col class="col-owner" />
-        <col class="col-created" />
-        <col class="col-issues" />
-      </colgroup>
-      <thead>
-        <tr>
-          <th scope="col" [attr.aria-sort]="ariaSort('name')">
-            <button type="button" class="sort" (click)="toggleSort('name')">
-              {{ 'list.columns.name' | t }}
-              <span aria-hidden="true">{{ sortArrow('name') }}</span>
-            </button>
-          </th>
-          <th scope="col">{{ 'list.columns.status' | t }}</th>
-          <th scope="col">{{ 'list.columns.members' | t }}</th>
-          <th scope="col">{{ 'list.columns.owner' | t }}</th>
-          <th scope="col" [attr.aria-sort]="ariaSort('createdAt')">
-            <button type="button" class="sort" (click)="toggleSort('createdAt')">
-              {{ 'list.columns.created' | t }}
-              <span aria-hidden="true">{{ sortArrow('createdAt') }}</span>
-            </button>
-          </th>
-          <th scope="col">{{ 'list.columns.issues' | t }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (org of rows(); track org.key) {
-          <tr>
-            <td>
-              @if (org.name !== null) {
-                <span class="name" dir="auto" [title]="org.name">{{ org.name }}</span>
-              } @else {
-                <em class="muted">{{ 'list.unnamed' | t }}</em>
-              }
-            </td>
-            <td><app-status-indicator [status]="org.status" /></td>
-            <td>
-              @if (org.memberCount !== null) {
-                {{ org.memberCount | number }}
-              } @else {
-                <span aria-hidden="true">—</span>
-                <span class="visually-hidden">{{ 'list.unknown' | t }}</span>
-              }
-            </td>
-            <td class="owner">
-              @if (org.ownerEmail === null) {
-                <span class="muted">{{ 'list.noOwner' | t }}</span>
-              } @else if (org.ownerEmailValid) {
-                <a [href]="'mailto:' + org.ownerEmail">{{ org.ownerEmail }}</a>
-              } @else {
-                {{ org.ownerEmail }} <span class="muted">{{ 'list.invalidEmail' | t }}</span>
-              }
-            </td>
-            <td>
-              @if (org.createdAt !== null) {
-                {{ org.createdAt | date: 'mediumDate' }}
-              } @else {
-                <span aria-hidden="true">—</span>
-                <span class="visually-hidden">{{ 'list.unknown' | t }}</span>
-              }
-            </td>
-            <td class="muted">{{ issueText(org) }}</td>
-          </tr>
+<section class="results" [attr.aria-busy]="store.status() === 'loading'">
+  @switch (store.status()) {
+    @case ('loading') {
+      <div class="skeleton" aria-hidden="true">
+        @for (row of skeletonRows; track row) {
+          <div class="skeleton-row"></div>
         }
-      </tbody>
-    </table>
-  </div>
-}
+      </div>
+    }
+
+    @case ('error') {
+      <app-state-panel
+        kind="error"
+        [heading]="'states.errorTitle' | t"
+        [message]="'states.errorMessage' | t"
+      >
+        <button type="button" class="action" (click)="retry()">{{ 'states.retry' | t }}</button>
+      </app-state-panel>
+    }
+
+    @case ('ready') {
+      @if (store.failedOffsets().length > 0) {
+        <app-state-panel
+          kind="warning"
+          [heading]="'states.partialTitle' | t"
+          [message]="'states.partialMessage' | t: { loaded: store.loadedCount(), total: store.total() ?? 0 }"
+        >
+          <button type="button" class="action" (click)="retry()">{{ 'states.retry' | t }}</button>
+        </app-state-panel>
+      }
+
+      @if (rows().length === 0) {
+        @if (hasActiveFilters() && store.loadedCount() > 0) {
+          <app-state-panel
+            kind="noResults"
+            [heading]="'states.noResultsTitle' | t"
+            [message]="'states.noResultsMessage' | t"
+          >
+            @if (!store.isComplete()) {
+              <p class="muted">{{ 'list.partialNote' | t }}</p>
+            }
+            <button type="button" class="action" (click)="clearFilters()">
+              {{ 'states.clearFilters' | t }}
+            </button>
+          </app-state-panel>
+        } @else {
+          <app-state-panel
+            kind="empty"
+            [heading]="'states.emptyTitle' | t"
+            [message]="'states.emptyMessage' | t"
+          />
+        }
+      } @else {
+        <p class="progress" role="status" aria-live="polite">
+          {{ 'list.showing' | t: { shown: rows().length, loaded: store.loadedCount() } }}
+          @if (hasActiveFilters() && !store.isComplete()) {
+            {{ 'list.partialNote' | t }}
+          }
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">{{ 'list.caption' | t }}</caption>
+            <colgroup>
+              <col class="col-name" />
+              <col class="col-status" />
+              <col class="col-members" />
+              <col class="col-owner" />
+              <col class="col-created" />
+              <col class="col-issues" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" [attr.aria-sort]="ariaSort('name')">
+                  <button type="button" class="sort" (click)="toggleSort('name')">
+                    {{ 'list.columns.name' | t }}
+                    <span aria-hidden="true">{{ sortArrow('name') }}</span>
+                  </button>
+                </th>
+                <th scope="col">{{ 'list.columns.status' | t }}</th>
+                <th scope="col">{{ 'list.columns.members' | t }}</th>
+                <th scope="col">{{ 'list.columns.owner' | t }}</th>
+                <th scope="col" [attr.aria-sort]="ariaSort('createdAt')">
+                  <button type="button" class="sort" (click)="toggleSort('createdAt')">
+                    {{ 'list.columns.created' | t }}
+                    <span aria-hidden="true">{{ sortArrow('createdAt') }}</span>
+                  </button>
+                </th>
+                <th scope="col">{{ 'list.columns.issues' | t }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (org of rows(); track org.key) {
+                <tr>
+                  <td>
+                    @if (org.name !== null) {
+                      <span class="name" dir="auto" [title]="org.name">{{ org.name }}</span>
+                    } @else {
+                      <em class="muted">{{ 'list.unnamed' | t }}</em>
+                    }
+                  </td>
+                  <td><app-status-indicator [status]="org.status" /></td>
+                  <td>
+                    @if (org.memberCount !== null) {
+                      {{ org.memberCount | number }}
+                    } @else {
+                      <span aria-hidden="true">—</span>
+                      <span class="visually-hidden">{{ 'list.unknown' | t }}</span>
+                    }
+                  </td>
+                  <td class="owner">
+                    @if (org.ownerEmail === null) {
+                      <span class="muted">{{ 'list.noOwner' | t }}</span>
+                    } @else if (org.ownerEmailValid) {
+                      <a [href]="'mailto:' + org.ownerEmail">{{ org.ownerEmail }}</a>
+                    } @else {
+                      {{ org.ownerEmail }} <span class="muted">{{ 'list.invalidEmail' | t }}</span>
+                    }
+                  </td>
+                  <td>
+                    @if (org.createdAt !== null) {
+                      {{ org.createdAt | date: 'mediumDate' }}
+                    } @else {
+                      <span aria-hidden="true">—</span>
+                      <span class="visually-hidden">{{ 'list.unknown' | t }}</span>
+                    }
+                  </td>
+                  <td class="muted">{{ issueText(org) }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    }
+  }
+</section>

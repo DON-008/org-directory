@@ -11,12 +11,13 @@ import { filterOrganisations } from './organisation-filter';
 import { SortKey, sortOrganisations } from './organisation-sort';
 import { STATUS_FILTERS, ViewParams, isStatusFilter, parseViewParams, toQueryParams } from './organisation-view-params';
 import { StatusIndicator } from './status-indicator';
+import { StatePanel } from './state-panel';
 
 const SEARCH_DEBOUNCE_MS = 300;
 
 @Component({
   selector: 'app-organisation-list',
-  imports: [DatePipe, DecimalPipe, TPipe, StatusIndicator],
+  imports: [DatePipe, DecimalPipe, TPipe, StatusIndicator, StatePanel],
   templateUrl: './organisation-list.html',
   styleUrl: './organisation-list.css',
 })
@@ -27,6 +28,8 @@ export class OrganisationList {
   private readonly router = inject(Router);
 
   protected readonly statusFilters = STATUS_FILTERS;
+
+  protected readonly skeletonRows = [1, 2, 3, 4, 5, 6, 7, 8];
 
   /** The URL is the single source of truth for search, filter and sort. */
   protected readonly params = toSignal(this.route.queryParamMap.pipe(map(parseViewParams)), {
@@ -85,6 +88,14 @@ export class OrganisationList {
   protected toggleSort(key: SortKey): void {
     const { sort, dir } = this.params();
     this.update(sort === key ? { dir: dir === 'asc' ? 'desc' : 'asc' } : { sort: key, dir: 'asc' });
+  }
+
+    protected retry(): void {
+    void this.store.load(); // fetches only what is missing
+  }
+
+  protected clearFilters(): void {
+    this.update({ q: '', status: 'all' });
   }
 
   protected ariaSort(key: SortKey): 'ascending' | 'descending' | 'none' {
