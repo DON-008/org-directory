@@ -32,7 +32,14 @@ Format: **Chose** / **Rejected** / **Why**.
 - Search, filter and sort run client-side on the rows loaded so far. The UI says results are partial until loading completes.
 - While loading is incomplete and a filter is active, the UI says results may be incomplete.
 ## 7. Name uniqueness (client + server)
-## 8. URL as state
+- Chose: an instant client check against the names loaded so far (ignores case, outer and repeated spaces), plus a server check on save. The mock POST compares against all 137 records and returns 409, which the form shows as a field error.
+- The form says so when the list isn't fully loaded ("checked against 125 of 137"), and re-validates as more pages arrive.
+- Rejected: client-only (can't see unloaded pages); blocking the form until the list is complete (up to a minute's wait).
+- Uniqueness ignores case and spacing but not accents: "Café" and "Cafe" are different names, unlike in search.
+- Validation shows on blur. A failed submit shows a summary (role=alert) and focuses the first invalid field. The submit button stays enabled; a silently disabled button explains nothing.
+- Email: Validators.email accepts "a@b", so a stricter pattern requires a dot after the @.
+- Known gap: no unsaved-changes warning when leaving the form.
+
 ## 8. URL as state
 - Chose: the URL holds search, status, sort key and direction (`?q=&status=&sort=&dir=`). The list reads it with toSignal(queryParamMap), and controls navigate. Defaults are left out of the URL. Invalid values fall back to defaults.
 - Typing is debounced (300 ms) and uses replaceUrl so history isn't flooded. Status and sort changes push history entries so Back undoes them.
@@ -41,6 +48,7 @@ Format: **Chose** / **Rejected** / **Why**.
 ## 9. Assumptions
 - "R3" is referenced but not defined; I assumed it means tests.
 - Failed requests count against the 5/min rate limit.
+- Created organisations live in memory only; a reload loses them (the mock doesn't persist).
 ## 10. AI tool declaration
 - (fill in honestly as you go)
 

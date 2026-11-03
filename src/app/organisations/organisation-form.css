@@ -1,0 +1,77 @@
+:host {
+  display: block;
+  max-width: var(--size-form-max);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+label {
+  font-weight: var(--font-weight-strong);
+}
+
+input,
+select {
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: var(--color-bg);
+  color: inherit;
+  font: inherit;
+}
+
+input[aria-invalid='true'] {
+  border: var(--border-width-2) solid var(--color-error);
+}
+
+.hint,
+.error {
+  margin: 0;
+  font-size: var(--font-size-1);
+}
+
+.hint {
+  color: var(--color-text-muted);
+}
+
+.error {
+  color: var(--color-error);
+  font-weight: var(--font-weight-strong);
+}
+
+.summary {
+  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  border: var(--border-width-2) solid var(--color-error);
+  border-radius: var(--radius-1);
+  background: var(--color-surface);
+}
+
+.summary h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-2);
+}
+
+.summary p {
+  margin: 0;
+}
+
+.summary ul {
+  margin: 0;
+  padding-inline-start: var(--space-6);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}

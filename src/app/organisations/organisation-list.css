@@ -100,6 +100,11 @@ th {
   animation: shimmer 1.2s linear infinite;
 }
 
+.add {
+  align-self: flex-end;
+  margin-inline-start: auto;
+}
+
 @keyframes shimmer {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
@@ -111,12 +116,3 @@ th {
   }
 }
 
-.action {
-  padding: var(--space-2) var(--space-4);
-  border: 0;
-  border-radius: var(--radius-1);
-  background: var(--color-brand);
-  color: var(--color-on-brand);
-  font: inherit;
-  cursor: pointer;
-}

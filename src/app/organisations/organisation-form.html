@@ -1,0 +1,95 @@
+<h2>{{ 'form.title' | t }}</h2>
+
+@if (summary().length > 0) {
+  <div class="summary" role="alert">
+    <h3>{{ 'form.summaryTitle' | t }}</h3>
+    <ul>
+      @for (item of summary(); track item.field) {
+        <li>
+          <a [href]="'#field-' + item.field" (click)="onSummaryLink($event, item.field)">{{ item.message }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+}
+
+@if (serverError()) {
+  <div class="summary" role="alert">
+    <h3>{{ 'form.serverErrorTitle' | t }}</h3>
+    <p>{{ 'form.serverError' | t }}</p>
+  </div>
+}
+
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="field">
+    <label for="field-name">{{ 'form.fields.name.label' | t }}</label>
+    <input
+      id="field-name"
+      type="text"
+      formControlName="name"
+      autocomplete="off"
+      dir="auto"
+      aria-required="true"
+      [attr.aria-invalid]="showError('name') ? 'true' : null"
+      [attr.aria-describedby]="showError('name') ? 'name-hint name-error' : 'name-hint'"
+    />
+    <p id="name-hint" class="hint">
+      {{ 'form.fields.name.hint' | t: { min: nameMin, max: nameMax } }}
+      @if (!store.isComplete()) {
+        {{ 'form.partialNote' | t: { loaded: store.loadedCount(), total: store.total() ?? '?' } }}
+      }
+    </p>
+    @if (showError('name')) {
+      <p id="name-error" class="error"><span aria-hidden="true">✕</span> {{ errorText('name') }}</p>
+    }
+  </div>
+
+  <div class="field">
+    <label for="field-ownerEmail">{{ 'form.fields.ownerEmail.label' | t }}</label>
+    <input
+      id="field-ownerEmail"
+      type="email"
+      formControlName="ownerEmail"
+      autocomplete="off"
+      aria-required="true"
+      [attr.aria-invalid]="showError('ownerEmail') ? 'true' : null"
+      [attr.aria-describedby]="showError('ownerEmail') ? 'email-hint email-error' : 'email-hint'"
+    />
+    <p id="email-hint" class="hint">{{ 'form.fields.ownerEmail.hint' | t }}</p>
+    @if (showError('ownerEmail')) {
+      <p id="email-error" class="error"><span aria-hidden="true">✕</span> {{ errorText('ownerEmail') }}</p>
+    }
+  </div>
+
+  <div class="field">
+    <label for="field-status">{{ 'form.fields.status.label' | t }}</label>
+    <select id="field-status" formControlName="status">
+      @for (option of statuses; track option) {
+        <option [value]="option">{{ 'status.' + option | t }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="field-memberCount">{{ 'form.fields.memberCount.label' | t }}</label>
+    <input
+      id="field-memberCount"
+      type="number"
+      inputmode="numeric"
+      formControlName="memberCount"
+      [attr.aria-invalid]="showError('memberCount') ? 'true' : null"
+      [attr.aria-describedby]="showError('memberCount') ? 'members-hint members-error' : 'members-hint'"
+    />
+    <p id="members-hint" class="hint">{{ 'form.fields.memberCount.hint' | t }}</p>
+    @if (showError('memberCount')) {
+      <p id="members-error" class="error"><span aria-hidden="true">✕</span> {{ errorText('memberCount') }}</p>
+    }
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="action" [disabled]="submitting()">
+      {{ (submitting() ? 'form.submitting' : 'form.submit') | t }}
+    </button>
+    <a routerLink="/" queryParamsHandling="preserve">{{ 'form.cancel' | t }}</a>
+  </div>
+</form>

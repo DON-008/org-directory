@@ -17,7 +17,8 @@
     "searchLabel": "Search by name",
     "searchPlaceholder": "Search organisations…",
     "statusLabel": "Status",
-    "statusAll": "All statuses"
+    "statusAll": "All statuses",
+    "add": "Add organisation"
   },
   "showing": "Showing {shown} of {loaded} organisations",
   "partialNote": "Some organisations are still loading, so these results may be incomplete.",
@@ -53,5 +54,37 @@
     "invalidEmail": "Invalid owner email",
     "invalidDate": "Invalid date",
     "duplicateId": "Duplicate ID"
+  },
+  "form": {
+  "title": "Add organisation",
+  "cancel": "Cancel",
+  "submit": "Create organisation",
+  "submitting": "Creating…",
+  "summaryTitle": "Please fix these problems",
+  "serverErrorTitle": "Couldn't create the organisation",
+  "serverError": "Something went wrong on the server. Nothing was saved. Please try again.",
+  "partialNote": "Names are only checked against the {loaded} of {total} organisations loaded so far. The server checks again when you save.",
+  "fields": {
+    "name": { "label": "Name", "hint": "{min} to {max} characters. Must be unique." },
+    "ownerEmail": { "label": "Owner email", "hint": "Required." },
+    "status": { "label": "Status" },
+    "memberCount": { "label": "Member count", "hint": "Optional. A whole number, 0 or more." }
+  },
+  "errors": {
+    "name": {
+      "required": "Enter a name.",
+      "minlength": "The name must be at least {min} characters.",
+      "maxlength": "The name must be at most {max} characters.",
+      "taken": "An organisation with this name already exists."
+    },
+    "ownerEmail": {
+      "required": "Enter the owner's email.",
+      "email": "Enter a valid email address, such as name@example.com."
+    },
+    "memberCount": {
+      "integer": "Enter a whole number.",
+      "min": "The member count can't be negative."
+    }
   }
+}
 }
