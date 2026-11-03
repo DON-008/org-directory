@@ -13,6 +13,7 @@ const RATE_WINDOW_MS = 60_000;
 const MAX_ATTEMPTS = 2; // first try plus one retry
 const MAX_RATE_LIMIT_WAITS = 3;
 const RETRY_BACKOFF_MS = 500;
+const CREATED_INDEX_BASE = 100_000; // keeps keys of created rows unique
 
 /** idle: not started. loading: page 1 pending, nothing to show. ready: rows shown. error: page 1 failed. */
 export type LoadStatus = 'idle' | 'loading' | 'ready' | 'error';
@@ -42,7 +43,7 @@ export class OrganisationStore {
 
   readonly status = this._status.asReadonly();
   /** Total records the API says exist (137), or null before page 1 arrives. */
-  readonly total = this._total.asReadonly();
+  // readonly total = this._total.asReadonly();
   /** True while background pages are still being fetched. */
   readonly fetching = this._fetching.asReadonly();
   /** True while we are deliberately waiting for the rate-limit window. */
@@ -50,17 +51,39 @@ export class OrganisationStore {
   /** Offsets of pages that failed even after a retry. */
   readonly failedOffsets = this._failedOffsets.asReadonly();
 
-  readonly items = computed<Organisation[]>(() => {
-    const ordered = [...this.pages().entries()]
-      .sort(([a], [b]) => a - b)
-      .flatMap(([, list]) => list);
-    return flagDuplicateIds(ordered);
+  
+    /** Organisations created in this session. */
+  private readonly created = signal<Organisation[]>([]);
+
+  private readonly loaded = computed<Organisation[]>(() =>
+    [...this.pages().entries()].sort(([a], [b]) => a - b).flatMap(([, list]) => list),
+  );
+
+  /** Created records the fetched pages don't contain yet. Avoids a duplicate if the API returns one later. */
+  private readonly extra = computed(() => {
+    const knownIds = new Set(this.loaded().map((org) => org.id));
+    return this.created().filter((org) => !knownIds.has(org.id));
   });
+
+  readonly items = computed<Organisation[]>(() => flagDuplicateIds([...this.loaded(), ...this.extra()]));
   readonly loadedCount = computed(() => this.items().length);
+
+  /** What the API reported, plus records created here that it hasn't returned. Null before page 1. */
+  readonly total = computed(() => {
+    const total = this._total();
+    return total === null ? null : total + this.extra().length;
+  });
+
+  /** Complete means every page the API reported was fetched. Created rows never fake completeness. */
   readonly isComplete = computed(() => {
     const total = this._total();
-    return total !== null && this.loadedCount() >= total;
+    return total !== null && this.loaded().length >= total;
   });
+
+  /** Adds a record the server just created. */
+  add(raw: unknown): void {
+    this.created.update((list) => [...list, normaliseOrganisation(raw, CREATED_INDEX_BASE + list.length)]);
+  }
 
   /** Loads page 1, then every other page we don't have yet. Safe to call again to retry. */
   async load(): Promise<void> {

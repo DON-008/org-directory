@@ -91,4 +91,22 @@ describe('OrganisationStore', () => {
     expect(api.calls.filter((o) => o === 0)).toHaveLength(2);
     expect(store.isComplete()).toBe(true);
   });
+
+    it('shows a created organisation immediately and counts it', async () => {
+    const { store } = setup();
+    await runLoad(store);
+    store.add({ id: 1000, name: 'Brand New', status: 'active', memberCount: 1, owner: { email: 'a@b.co' }, createdAt: '2026-01-01T00:00:00Z' });
+    expect(store.loadedCount()).toBe(138);
+    expect(store.total()).toBe(138);
+    expect(store.isComplete()).toBe(true);
+    expect(store.items().at(-1)?.name).toBe('Brand New');
+  });
+
+  it('does not treat a created row as a loaded page', async () => {
+    const { store } = setup((offset) => (offset === 75 ? 'fail' : 'ok'));
+    await runLoad(store);
+    store.add({ id: 1000, name: 'Brand New' });
+    expect(store.loadedCount()).toBe(113);
+    expect(store.isComplete()).toBe(false);
+  });
 });
