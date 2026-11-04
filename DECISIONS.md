@@ -50,7 +50,9 @@
 - Mock API: counts every non-429 list request (including 500s) against the 5/min budget; 429s are not counted. Counter is in memory (resets on reload).
 - Create is mocked with server-side uniqueness (409), and created records appear in later list responses.
 ## 10. AI tool declaration
-- 
+
+- Syntax and code generation
+- UI design 
 
 ## 11. Loading, empty and error states
 - Chose: one panel component for all message states, each with its own icon, heading and border colour, so colour is never the only signal. Error uses role="alert"; the others use role="status".
